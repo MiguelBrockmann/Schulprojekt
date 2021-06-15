@@ -1,4 +1,7 @@
 import java.util.Scanner;
+import java.sql.*;
+import java.sql.DriverManager;
+
 
 public class App {
     private final static double price = 0.67;
@@ -13,6 +16,18 @@ public class App {
         double strecke2= sc.nextDouble();
         double preis= streckenBerechnung(strecke1,strecke2);
         System.out.println("the cost will be" + " " + preis + " $");
+
+        try {
+
+            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schule","miggione1","Kaktus06!");
+            Statement myStmt = myConn.createStatement();
+            ResultSet myRs = myStmt.executeQuery("select * from employees");
+            while (myRs.next()){
+                System.out.println(myRs.getString("Lastname"));
+            }
+        } catch (Exception exc){
+            exc.printStackTrace();
+        }
     }
 
     /**
