@@ -39,7 +39,13 @@ public class App {
         double strecke = startpunkt1 + startpunkt2;
         double preis = strecke * price;
         return  preis;
-    }
+    }//statt sowas switch mit hamburg , eppendowrf usw "1"
 }
 
+//switch(ort) {
+  //  case 1: eppendorf m();
+    //case 2: st pauli_
+      //  }
 
+
+//json erstellen für aike 
