@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CalculatorRest {
     @GetMapping("calculate")
-    public int calculate(@RequestParam("distance") int distance) {
-        return distance * 2;
+    public Price calculate(@RequestParam("distance") int distance) {
+        Price price = new Price();
+        price.setPrice(distance * 2);
+        return price;
     }
 }
