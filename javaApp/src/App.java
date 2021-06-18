@@ -21,10 +21,14 @@ public class App {
 
             Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/schule","miggione1","Kaktus06!");
             Statement myStmt = myConn.createStatement();
+            String sql ="insert into employees " + "(Lastname, firstname)" + " values ('Brown', 'Daivid')";
+            myStmt.executeUpdate(sql);
+            System.out.println("insert complete");
+            /*Statement myStmt = myConn.createStatement();
             ResultSet myRs = myStmt.executeQuery("select * from employees");
             while (myRs.next()){
                 System.out.println(myRs.getString("Lastname"));
-            }
+            }*/
         } catch (Exception exc){
             exc.printStackTrace();
         }
