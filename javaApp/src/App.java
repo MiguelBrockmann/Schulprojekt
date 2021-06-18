@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 import java.sql.*;
 import java.sql.DriverManager;
@@ -8,13 +10,16 @@ public class App {
 
     public static void main(String[] args){
 
+
         Scanner sc = new Scanner(System.in);
         System.out.println("enter your startpoint and your endpoint in km pls");
         System.out.println("startpoint");
         double strecke1= sc.nextDouble();
         System.out.println("endpoint");
         double strecke2= sc.nextDouble();
-        double preis= streckenBerechnung(strecke1,strecke2);
+        double preis = streckenBerechnung(strecke1,strecke2);
+
+
         System.out.println("the cost will be" + " " + preis + " $");
 
         try {
