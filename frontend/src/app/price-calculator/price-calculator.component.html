@@ -1,0 +1,30 @@
+<mat-card-title class="my-style-header" color="accent">Berechne deine Fahrtkosten:</mat-card-title>
+<mat-card-subtitle></mat-card-subtitle>
+
+<form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+  <p>
+    <mat-form-field class="my-style" appearance="fill">
+
+      <mat-label>Wohin geht die Fahrt?</mat-label>
+
+      <mat-select formControlName="distance">
+        <mat-option value="1">St. Georg</mat-option>
+        <mat-option value="2">Harvestehude</mat-option>
+        <mat-option value="3">Barmbek</mat-option>
+        <mat-option value="4">Winterhude</mat-option>
+        <mat-option value="5">Eppendorf</mat-option>
+        <mat-option value="6">Altona</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+  <section>
+    <div class="my-style">
+      <button type="submit" mat-flat-button color="accent">Fahrpreis berechnen</button>
+    </div>
+  </section>
+</form>
+
+
+
+

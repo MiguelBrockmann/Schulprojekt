@@ -1,0 +1,42 @@
+<mat-card-title class="my-style-header" color="warn">Jetzt registrieren!</mat-card-title>
+<mat-card-subtitle></mat-card-subtitle>
+<form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+  <div>
+    <mat-form-field class="my-style" appearance="outline">
+      <mat-label>Vorname</mat-label>
+      <input matInput autocomplete="off" placeholder=Scoo formControlName="vorname">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="my-style" appearance="outline">
+      <mat-label>Nachname</mat-label>
+      <input matInput autocomplete="off" placeholder=Tec formControlName="nachname">
+    </mat-form-field>
+  </div>
+  <div class="my-style">
+    <mat-form-field appearance="outline">
+      <mat-label>Passwort</mat-label>
+      <input matInput autocomplete="off" [type]="hide ? 'password' : 'text'" formControlName="passwort">
+      <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+  </div>
+  <div class="my-style">
+    <mat-form-field appearance="outline">
+      <mat-label>Email-Adresse</mat-label>
+      <input matInput autocomplete="off" placeholder="nutzer@scootec.com" formControlName="email">
+      <mat-error *ngIf="form.get('email')?.invalid">Ungültige Email-Adresse</mat-error>
+    </mat-form-field>
+  </div>
+
+  <section>
+    <div class="my-style">
+
+      <button mat-raised-button color="warn" [disabled]="form.invalid">Let's Roll</button>
+
+    </div>
+  </section>
+</form>
