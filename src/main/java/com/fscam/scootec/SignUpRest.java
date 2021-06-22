@@ -1,11 +1,11 @@
 package com.fscam.scootec;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
 public class SignUpRest {
-    @PostMapping("createAccount")
+    @PostMapping("sign-up")
     public void createAccount(Account account) {
 
     }
